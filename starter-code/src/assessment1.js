@@ -1,6 +1,9 @@
 // Write a function that returns the product of 2 numbers
 function product(x, y) {
-  return x * y
+  if ( typeof x !== "number" || typeof y !== "number") {
+    return false
+  }
+  else {return  x * y}
 }
 
 // Write a function that returns whether a given number is even
@@ -18,7 +21,10 @@ function maxOfTwoNumbers(a, b) {
 
 // Return the largest of 3 numbers
 function maxOfThreeNumbers(a, b, c) {
-  return Math.max(a,b,c)
+  if ( typeof a !== "number" || typeof b !== "number" || typeof c !== "number") {
+    return false
+  }
+  else {return Math.max(a,b,c)}
 }
 
 // Calculate the sum of an array of numbers
@@ -26,13 +32,16 @@ function sumArray(numbers) {
   if (numbers.length === 0) {
     return 0
   }
+  else if (typeof numbers !== "object") {
+    return false
+  }
   return numbers.reduce((acc, currentValue) => acc + currentValue)
 }
 
 // Return the largest number of a non-empty array
 function maxOfArray(numbers) {
   if (numbers.length === 0) {
-    return 0
+    return false
   }
   return Math.max(...numbers)
 
